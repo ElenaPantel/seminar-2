@@ -4,7 +4,6 @@
 //программа выводит остаток от деления.
 //34, 5 -> не кратно, остаток 4
 //16, 4 -> кратно
-// push
 
 
 int number1=new Random().Next(100,1000);
@@ -14,4 +13,3 @@ Console.WriteLine (number2);
 
 if (number1 % number2==0) Console.WriteLine("yes");
 else Console.WriteLine("no");
-
