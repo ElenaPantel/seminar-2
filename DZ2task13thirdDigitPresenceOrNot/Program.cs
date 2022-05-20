@@ -14,7 +14,7 @@ Console.WriteLine(num.Length > 2 ? $"{number} -> {num[2]}" : $"{num} -> There is
 if(numberS.Length > 2) {
     Console.WriteLine($"{number} -> {numberS[2]}");
 } else {
-    Console.WriteLine($"{number} -> третьей цифры нет");
+    Console.WriteLine($"{number} -> no third digit");
 }
 */
 
@@ -41,4 +41,4 @@ if(numberS.Length > 2) {
 //}
 //    int mult1 = num % 100;
  //   int mult2 = mult1 / 10;
- //   Console.WriteLine($"Вторая цифра введённого числа {mult2}");
+ //   Console.WriteLine($"The second digit of the number entered{mult2}");
