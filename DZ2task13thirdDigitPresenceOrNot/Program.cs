@@ -18,6 +18,7 @@ if(numberS.Length > 2) {
 }
 */
 
+//Previous tries
 
 //Console.Write("Enter a number: ");
 //string input = Convert.ToInt32(Console.ReadLine());
