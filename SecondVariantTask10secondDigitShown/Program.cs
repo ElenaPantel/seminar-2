@@ -15,21 +15,21 @@ Console.WriteLine(numberS.Length == 3 ? $"{number} -> {numberS[1]}" : "Not a thr
 }
 */
 
-Console.Write("Введите трёхзначное число: ");
+Console.Write("Enter three digit number: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
 if (num > 999)
 {
-    Console.WriteLine("Я зря сказал трёхзначное?");
+    Console.WriteLine("Not a three digit number");
 }
 else if (num < 100)
 {
-    Console.WriteLine("Так, тут не хватает цифр");
+    Console.WriteLine("Not enough digits");
 }
 else
 {
     int mult1 = num % 100;
     int mult2 = mult1 / 10;
-    Console.WriteLine($"Вторая цифра введённого числа {mult2}");
+    Console.WriteLine($"Second digit of entered number {mult2}");
 }
 Console.ReadLine();
