@@ -3,6 +3,7 @@
 // степень B. Задачу решить без использования Math.Pow.
 // 3, 5 -> 243 (3⁵)
 // 2, 4 -> 16
+// int result = Math.Pow(numberA, numberB);
 
 internal class NewBaseType
 {
