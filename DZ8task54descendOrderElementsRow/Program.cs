@@ -1,12 +1,12 @@
 ﻿//Задача 54: Задайте двумерный массив. Напишите программу, которая 
 //упорядочит по убыванию элементы каждой строки двумерного массива.
 
-int m = ReadInteger("Enter the number of strings m= ");
-int n = ReadInteger("Enter the number of columns n= ");
-int minimum = -99;
-int maximum = 99;
+int m = ReadIntNum("Enter the number of rows m= ");
+int n = ReadIntNum("Enter the number of columns n= ");
+int min = -99;
+int max = 99;
 
-int[,] array = CreateArrayRandom(m, n, minimum, maximum);
+int[,] array = GetRandArray(m, n, min, max);
 Console.WriteLine("Initial array:");
 PrintArray(array);
 
@@ -26,7 +26,7 @@ Console.WriteLine();
 Console.WriteLine("Array with sorted rows: ");
 PrintArray(array);
 
-int[,] CreateArrayRandom(int rows, int columns, int minValue, int maxValue)
+int[,] GetRandArray(int rows, int columns, int minValue, int maxValue)
 {
     int[,] array = new int[rows, columns];
 
@@ -37,7 +37,7 @@ int[,] CreateArrayRandom(int rows, int columns, int minValue, int maxValue)
     return array;
 }
 
-int ReadInteger(string message)
+int ReadIntNum(string message)
 {
     Console.Write(message);
     return Convert.ToInt32(Console.ReadLine());
