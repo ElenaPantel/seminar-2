@@ -2,27 +2,27 @@
 // двузначных чисел. Напишите программу, которая будет построчно выводить 
 // массив, добавляя индексы каждого элемента.
 
-int GetDemension(string message)
+int Get3DArray(string message)
 {
-    Console.WriteLine(message);
-    int demension = int.Parse(Console.ReadLine());
-    return demension;
+    Console.Write(message);
+    int dimension = int.Parse(Console.ReadLine());
+    return dimension;
 }
 
-int[,,] InitMatrix(int firstDemension, int secondDemension, int thirdDemension)
+int[,,] InitMatrix(int firstDimension, int secondDimension, int thirdDimension)
 {
-    int[,,] matrix = new int[firstDemension, secondDemension, thirdDemension];
+    int[,,] matrix = new int[firstDimension, secondDimension, thirdDimension];
     Random rnd = new Random();
-    for (int i = 0; i < firstDemension; i++)
+    for (int i = 0; i < firstDimension; i++)
     {
-        for (int j = 0; j < secondDemension; j++)
+        for (int j = 0; j < secondDimension; j++)
         {
-            for (int k = 0; k < thirdDemension; k++)
+            for (int k = 0; k < thirdDimension; k++)
             {
-                matrix[i, j, k] = rnd.Next(0, 10);
+                matrix[i, j, k] = rnd.Next(10, 100);
             }
         }
-            
+
     }
 
     return matrix;
@@ -30,26 +30,27 @@ int[,,] InitMatrix(int firstDemension, int secondDemension, int thirdDemension)
 
 void PrintMatrix(int[,,] matrix)
 {
-    
+
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
-      for (int j = 0; j < matrix.GetLength(1); j++)
-      {
-          for (int k = 0; k < matrix.GetLength(2); k++)
-           { Console.Write($"{matrix[i,j, k]} index {i}.{j}.{k}. ");
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            for (int k = 0; k < matrix.GetLength(2); k++)
+            {
+                Console.Write($"{matrix[i, j, k]} index {i}.{j}.{k}. ");
 
-             Console.WriteLine();
-           }
-      }
-        
+                Console.WriteLine();
+            }
+        }
+
     }
 }
 
 
-int firstDemension = GetDemension("Enter lenght of the X dimension:");
-int secondDemension = GetDemension("Enter lenght of the Y dimension:");
-int thirdDemension = GetDemension("Enter lenght of the Z dimension:");
+int firstDimension = Get3DArray("Enter X dimension length: ");
+int secondDimension = Get3DArray("Enter Y dimension length: ");
+int thirdDimension = Get3DArray("Enter Z dimension length: ");
 
-int[,,] resultMatrix = InitMatrix(firstDemension, secondDemension, thirdDemension);
+int[,,] resultMatrix = InitMatrix(firstDimension, secondDimension, thirdDimension);
 
 PrintMatrix(matrix: resultMatrix);
