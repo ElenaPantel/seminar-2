@@ -6,12 +6,12 @@ Console.WriteLine();
 int numberRow = 4;
 int numberCol = 4;
 int[,] spiralArray = new int[numberRow, numberCol];
-FillArraySpiral(spiralArray, numberRow, numberCol);
-Console.WriteLine("This is a spiral array:");
+FillSpiralArray(spiralArray, numberRow, numberCol);
+Console.WriteLine("The spiral array:");
 Console.WriteLine();
 PrintArray(spiralArray);
 
-int[,] FillArraySpiral(int[,] array, int numberRow, int numberCol)
+int[,] FillSpiralArray(int[,] array, int numberRow, int numberCol)
 {
     int counter = 1, i = 0, j = 0;
     while (counter <= numberRow * numberCol)
