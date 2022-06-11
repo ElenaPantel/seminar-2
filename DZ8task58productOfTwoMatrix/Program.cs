@@ -1,16 +1,16 @@
 ﻿// Задача 58: Задайте две матрицы. Напишите программу, 
 //которая будет находить произведение двух матриц.
 
-int[,] matrixA = CreateArrayRandom(
-    rows: ReadInteger("Enter the number of rows of the matrix А: "),
-    columns: ReadInteger("Enter the number of columns of the matrix А: "),
+int[,] matrixA = GetRandAraay(
+    rows: ReadEnteredNum("Enter a number of rows of the matrix A: "),
+    columns: ReadEnteredNum("Enter a number of columns of the matrix A: "),
     minValue: -9,
     maxValue: 9
 );
 
-int[,] matrixB = CreateArrayRandom(
-    rows: ReadInteger("Enter the number of rows of the matrix B: "),
-    columns: ReadInteger("Enter the number of columns of the matrix B: "),
+int[,] matrixB = GetRandAraay(
+    rows: ReadEnteredNum("Enter a number of rows of the matrix B: "),
+    columns: ReadEnteredNum("Enter a number of columns of the matrix B: "),
     minValue: -9,
     maxValue: 9
 );
@@ -21,35 +21,35 @@ Console.WriteLine("Matrix B:");
 PrintArray(matrixB);
 Console.WriteLine();
 
-int[,] matrixС = MatrixMultiplication(matrixA, matrixB);
+int[,] matrixC = MultiplicatMatrix(matrixA, matrixB);
 
-if (matrixС.GetLength(0) != 0)
+if (matrixC.GetLength(0) != 0)
 {
     Console.WriteLine("Matrix A x Matrix B = Matrix C: ");
-    PrintArray(matrixС);
+    PrintArray(matrixC);
 }
 else
 {
     Console.WriteLine("No product for these matrix");
 }
 
-int[,] MatrixMultiplication(int[,] matrixA, int[,] matrixB)
+int[,] MultiplicatMatrix(int[,] matrixA, int[,] matrixB)
 {
     if (matrixA.GetLength(1) != matrixB.GetLength(0))
         return new int[0, 0];
 
-    int[,] matrixС = new int[matrixA.GetLength(0), matrixB.GetLength(1)];
-    for (int row = 0; row < matrixС.GetLength(0); row++)
-        for (int col = 0; col < matrixС.GetLength(1); col++)
+    int[,] MatrixC = new int[matrixA.GetLength(0), matrixB.GetLength(1)];
+    for (int row = 0; row < MatrixC.GetLength(0); row++)
+        for (int column = 0; column < MatrixC.GetLength(1); column++)
         {
-            matrixС[row, col] = 0;
+            MatrixC[row, column] = 0;
             for (int i = 0; i < matrixA.GetLength(1); i++)
-                matrixС[row, col] += matrixA[row, i] * matrixB[i, col];
+                MatrixC[row, column] += matrixA[row, i] * matrixB[i, column];
         }
-    return matrixС;
+    return MatrixC;
 }
 
-int[,] CreateArrayRandom(int rows, int columns, int minValue, int maxValue)
+int[,] GetRandAraay(int rows, int columns, int minValue, int maxValue)
 {
     int[,] array = new int[rows, columns];
 
@@ -60,7 +60,7 @@ int[,] CreateArrayRandom(int rows, int columns, int minValue, int maxValue)
     return array;
 }
 
-int ReadInteger(string message)
+int ReadEnteredNum(string message)
 {
     Console.Write(message);
     return Convert.ToInt32(Console.ReadLine());
